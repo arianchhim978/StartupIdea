@@ -1,45 +1,83 @@
-#header{
-    display:flex;
+#header {
+    display: flex;
     list-style: none;
-    gap:20px;
+    gap: 20px;
     justify-content: end;
-    
+    position: fixed; /* Fixed position to keep it in place */
+    top: 0; /* Position it at the top of the viewport */
+    width: 100%; /* Take full width of the viewport */
+    background-color: whitesmoke; /* Set background color as needed */
+    padding: 10px; /* Add padding for spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-radius:5px;
+    height:100px;
 }
-ul,a{
-    text-decoration:none;
-    
+
+ul, a {
+    text-decoration: none;
+    margin: 0;
 }
-@media (max-width:600px){
-    body{
+body{
+    font-family: "Cuprum",sans-serif;
+}
+
+@media (max-width: 600px) {
+    body {
         background-color: whitesmoke;
     }
-    #header{
-        display:none;
-        margin-top:60px;
-        font-size:20px;
-        
-  
+    #header {
+        display: none;
+        margin-top: 60px;
+        font-size: 20px;
     }
-    #button{
-        position:fixed;
-        right:10px;
-        z-index:999;
+    #button {
+        position: fixed;
+        right: 10px;
+        top: 10px; /* Adjust top position as needed */
+        z-index: 999;
     }
-    header{
-        display:flex;
-       list-style: none;
-       gap:20px;
-       justify-content: center;
-      
+    header {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        justify-content: center;
     }
-    #button{
-        border:none;
+    #button {
+        border: none;
         background-color: whitesmoke;
     }
+
+
+#container2 {
+    margin-top: 100px;
 }
-#box1,#box2,#box3{
-    border:solid 2px black;
+
+#box1, #box2, #box3 {
+    border: solid 2px black;
+    height: 300px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px; /* Add margin to space out the boxes */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+.trial,.trial2,.trial3{
+    height:40px;
+    width: 60%;
+    background-color: whitesmoke;
+    border:1px solid black;
    
-    height:240px;
-    width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    border-radius: 5px;
+}
+.trial2,.trial3{
+    margin-top: 170px;
+}
+.trial{
+    margin-top:140px;
+}
 }
