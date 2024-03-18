@@ -8,6 +8,3 @@ button.addEventListener("click", function() {
         header.style.display = "none";
     }
 });
-
-
-
