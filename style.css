@@ -1,0 +1,45 @@
+#header{
+    display:flex;
+    list-style: none;
+    gap:20px;
+    justify-content: end;
+    
+}
+ul,a{
+    text-decoration:none;
+    
+}
+@media (max-width:600px){
+    body{
+        background-color: whitesmoke;
+    }
+    #header{
+        display:none;
+        margin-top:60px;
+        font-size:20px;
+        
+  
+    }
+    #button{
+        position:fixed;
+        right:10px;
+        z-index:999;
+    }
+    header{
+        display:flex;
+       list-style: none;
+       gap:20px;
+       justify-content: center;
+      
+    }
+    #button{
+        border:none;
+        background-color: whitesmoke;
+    }
+}
+#box1,#box2,#box3{
+    border:solid 2px black;
+   
+    height:240px;
+    width:400px;
+}
