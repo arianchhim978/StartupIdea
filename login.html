@@ -6,70 +6,57 @@
     <title>StartupIdeas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alata&family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Cuprum:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body> 
-    <header> <div id="container"> 
-      <button  id="button"><img src="icons8-hamburger-menu-50.png" draggable="false"></button>
-      
-      <ul id="header">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="product.html">Product</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
+    <header>
+        <div id="container"> 
+            <button id="button"><img src="icons8-hamburger-menu-50.png" draggable="false"></button>
+            <ul id="header">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Product</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
         </div>
     </header>
+    <div id="container3">
+    <h1 class="margin ">Sign Into an Account  </h1>
+    <p>Use  Facebook,Google,or Apple</p>
+    </div>
+    <button class="button2" id="google-signin-btn">Sign in with Google</button>
 
+    <!-- Add Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+  apiKey: "AIzaSyBxpHSyZrNmr3-y3LBG4zTr8xaykQcyX-4",
+  authDomain: "startupideas-c6f28.firebaseapp.com",
+  projectId: "startupideas-c6f28",
+  storageBucket: "startupideas-c6f28.appspot.com",
+  messagingSenderId: "43652784908",
+  appId: "1:43652784908:web:e6aca10b46cd239f595f29"
+};
 
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="login.js" type="module"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBxpHSyZrNmr3-y3LBG4zTr8xaykQcyX-4",
-    authDomain: "startupideas-c6f28.firebaseapp.com",
-    projectId: "startupideas-c6f28",
-    storageBucket: "startupideas-c6f28.appspot.com",
-    messagingSenderId: "43652784908",
-    appId: "1:43652784908:web:e6aca10b46cd239f595f29"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>
+        // Google Sign-In Button Click Handler
+        document.getElementById('google-signin-btn').addEventListener('click', function() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider)
+                .then(function(result) {
+                    // Google Sign-In was successful, you can get user info from result.user
+                    console.log(result.user);
+                })
+                .catch(function(error) {
+                    // Handle errors here
+                    console.error(error);
+                });
+        });
+    </script>
 </body>
 </html>
